@@ -1,5 +1,7 @@
 import {View, Text, StyleSheet, FlatList, Alert} from "react-native"
 import React, {useEffect, useState} from "react";
+import WatchListItem from "../../../components/WatchListItem";
+import {assertConfigFileSearch} from "@babel/core/lib/config/validation/option-assertions";
 
 export default function HomeScreen() {
     let [movies, setMovies] = useState([])
@@ -18,9 +20,12 @@ export default function HomeScreen() {
                     Alert.alert("Error", `The Server responded with ${response.status} ${response.statusText}`)
                 }
                 const movieData = await response.json()
-                setMovies(movieData)
+                if (movieData.Response === "True") {
+                    setMovies(movieData.Search)
+                } else {
+                    Alert.alert("Error", "No Movies found")
+                }
                 setIsLoading(false)
-                console.log(movieData)
             } catch (error) {
                 console.log(error)
                 Alert.alert("An Error occurred", error.message)
@@ -36,7 +41,12 @@ export default function HomeScreen() {
         isLoading ?
             <Text>Loading</Text>
             :
-        <Text>Movies are here</Text>
+            <FlatList data={movies}
+                      renderItem={({item}) => <WatchListItem item={item} />}
+                      keyExtractor={item => item.imdbID}
+
+            />
+
     )
 }
 

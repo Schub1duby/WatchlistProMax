@@ -1,15 +1,14 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Link } from 'expo-router';
-export default function WatchListItem(props) {
+export default function WatchListItem({item}) {
 
     return (
-        <Link href={{ pathname: 'details', params: { detailUrl: props.item } }} asChild>
+        //<Link href={{ pathname: 'details', params: { detailUrl: props.item } }} asChild>
             <TouchableOpacity>
                 <View style={styles.container}>
-                    <Text style={styles.paddingLR}>{props.item}</Text>
+                    <Text style={styles.paddingLR}>{item.Title}</Text>
                 </View>
             </TouchableOpacity>
-        </Link>
     );
 }
 
