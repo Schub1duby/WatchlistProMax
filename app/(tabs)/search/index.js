@@ -1,7 +1,6 @@
 import {View, Text, StyleSheet, FlatList, Alert} from "react-native"
 import React, {useEffect, useState} from "react";
 import WatchListItem from "../../../components/WatchListItem";
-import {assertConfigFileSearch} from "@babel/core/lib/config/validation/option-assertions";
 
 export default function HomeScreen() {
     let [movies, setMovies] = useState([])
@@ -34,7 +33,7 @@ export default function HomeScreen() {
         loadMovies()
     }, [])
 
-    console.log(movies)
+    //console.log(movies)
 
 
     return (
