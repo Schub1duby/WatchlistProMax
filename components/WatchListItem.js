@@ -3,7 +3,7 @@ import { Link } from "expo-router";
 export default function WatchListItem({ item }) {
   return (
     <Link
-      href={{ pathname: "details", params: { detailUrl: item.imdbID } }}
+      href={{ pathname: "search/details", params: { detailUrl: item.imdbID } }}
       asChild
     >
       <TouchableOpacity>

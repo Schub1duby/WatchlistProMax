@@ -18,7 +18,7 @@ export default function HomeLayout() {
                 }}
             />
             <Tabs.Screen
-                name="search/index"
+                name="search"
                 options={{
                     title: "Search",
                     tabBarIcon: ({ color }) => (
