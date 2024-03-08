@@ -2,7 +2,7 @@ import {View, Text, StyleSheet} from "react-native"
 export default function HomeScreen()  {
     return (
         <View style={defaultStyle.View}>
-            <Text>Home</Text>
+            <Text>Watchlist</Text>
         </View>
     )
 }

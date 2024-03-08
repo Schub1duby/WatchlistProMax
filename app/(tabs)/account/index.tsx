@@ -1,8 +1,8 @@
 import {View, Text, StyleSheet} from "react-native"
-export default function HomeScreen()  {
+export default function FavoritesScreen()  {
     return (
         <View style={defaultStyle.View}>
-            <Text>Explore</Text>
+            <Text>Account</Text>
         </View>
     )
 }

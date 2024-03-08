@@ -11,35 +11,35 @@ export default function HomeLayout() {
                         <Ionicons
                             size={28}
                             style={{ marginBottom: -3 }}
-                            name="compass"
+                            name="home"
                             color={color}
                         />
                     ),
                 }}
             />
             <Tabs.Screen
-                name="explore/index"
+                name="search/index"
                 options={{
-                    title: "Explore",
+                    title: "Search",
                     tabBarIcon: ({ color }) => (
                         <Ionicons
                             size={28}
                             style={{ marginBottom: -3 }}
-                            name="compass"
+                            name="search"
                             color={color}
                         />
                     ),
                 }}
             />
             <Tabs.Screen
-                name="favorites/index"
+                name="account/index"
                 options={{
-                    title: "Favorites",
+                    title: "Account",
                     tabBarIcon: ({ color }) => (
                         <Ionicons
                             size={28}
                             style={{ marginBottom: -3 }}
-                            name="compass"
+                            name="person"
                             color={color}
                         />
                     ),
