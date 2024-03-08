@@ -1,9 +1,11 @@
-import {View, Text, StyleSheet} from "react-native"
-export default function HomeScreen()  {
+import { View, Text, StyleSheet, FlatList } from "react-native"
+import WatchListItem from "../../../components/WatchListItem"
+export default function HomeScreen() {
+    let watchList = ["AAPL", "TSLA", "GOOGL", "AMZN", "MSFT", "FB", "NFLX", "DIS", "NVDA", "PYPL"];
+
     return (
-        <View style={defaultStyle.View}>
-            <Text>Watchlist</Text>
-        </View>
+        <FlatList data={watchList}
+            renderItem={WatchListItem} />
     )
 }
 
