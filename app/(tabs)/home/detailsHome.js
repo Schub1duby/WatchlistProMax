@@ -37,7 +37,7 @@ export default function DetailsHome() {
     const loadMovieDetails = async () => {
       try {
         setIsLoading(true);
-        let url = "http://www.omdbapi.com/?i=" + imdbID + "&apikey=e69bd20e";
+        let url = "https://www.omdbapi.com/?i=" + imdbID + "&apikey=e69bd20e";
         const response = await fetch(url);
         const data = await response.json();
         setMovie(data);
