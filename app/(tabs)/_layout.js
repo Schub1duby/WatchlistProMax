@@ -22,7 +22,7 @@ export default function HomeLayout() {
             headerShadowVisible: false
         }}>
             <Tabs.Screen
-                name="home/index"
+                name="home"
                 options={{
                     title: "Home",
                     tabBarIcon: ({ color }) => (
