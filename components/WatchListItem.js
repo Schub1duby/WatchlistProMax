@@ -30,13 +30,17 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     height: 104,
-    backgroundColor: "black",
+    backgroundColor: "#2C2A2F",
     alignItems: "center",
     justifyContent: "left",
     paddingLeft: 16,
     paddingRight: 16,
     paddingTop: 8,
     paddingBottom: 8,
+    margin: 8,
+    borderRadius: 10,
+    marginTop: 4,
+    marginBottom: 4
   },
   text: {
     paddingLeft: 16,
