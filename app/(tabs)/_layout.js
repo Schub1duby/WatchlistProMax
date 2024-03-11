@@ -2,11 +2,20 @@ import { Tabs } from "expo-router"
 import Ionicons from "@expo/vector-icons/Ionicons"
 export default function HomeLayout() {
     return (
-        <Tabs screenOptions={{}}>
+        <Tabs screenOptions={{
+            tabBarActiveTintColor: "#ff5800",
+            tabBarInactiveTintColor: "#808080",
+            tabBarLabelStyle: {
+                fontSize: 12,
+                fontWeight: "bold",
+            },
+            tabBarStyle: {
+                backgroundColor: "black"
+            }
+        }}>
             <Tabs.Screen
                 name="home/index"
                 options={{
-                    tabBarActiveBackgroundColor: "black",
                     headerShown: false,
                     title: "Home",
                     tabBarIcon: ({ color }) => (

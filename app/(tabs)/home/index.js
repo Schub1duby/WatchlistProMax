@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import {StyleSheet, FlatList, SafeAreaView} from "react-native";
 import WatchListItem from "../../../components/WatchListItem";
 import { useEffect, useState } from "react";
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
@@ -17,11 +17,14 @@ export default function HomeScreen() {
     loadItems();
   }, []);
   return (
-    <FlatList
-      data={movies}
-      renderItem={({ item }) => <WatchListItem item={item} />}
-      keyExtractor={(item) => item.imdbID}
-    />
+      <SafeAreaView>
+        <FlatList
+            data={movies}
+            renderItem={({ item }) => <WatchListItem item={item} />}
+            keyExtractor={(item) => item.imdbID}
+        />
+      </SafeAreaView>
+
   );
 }
 
