@@ -6,16 +6,17 @@ import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 export default function HomeScreen() {
   const { getItem, setItem } = useAsyncStorage("Items");
   let [movies, setMovies] = useState([]);
+  const [storageKey, setStorageKey] = useState(0); // new state variable
 
   useEffect(() => {
-    console.log("useEffect");
     const loadItems = async () => {
       const storedItems = await getItem();
       const parsedItems = storedItems ? JSON.parse(storedItems) : [];
       setMovies(parsedItems);
+      setStorageKey(storageKey + 1); // increment storageKey
     };
     loadItems();
-  }, []);
+  }, [storageKey]); // pass storageKey as a dependency
   return (
       <SafeAreaView style={defaultStyle.View}>
         <FlatList

@@ -19,7 +19,6 @@ export default function DetailsSearch() {
     }
     parsedItems.push(movie);
     await setItem(JSON.stringify(parsedItems));
-
   };
   
   useEffect(() => {
