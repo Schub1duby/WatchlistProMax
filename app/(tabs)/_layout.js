@@ -38,7 +38,7 @@ export default function HomeLayout() {
             <Tabs.Screen
                 name="home"
                 options={{
-                    title: "Home",
+                    title: "Your Watchlist",
                     tabBarIcon: ({ color }) => (
                         <Ionicons
                             size={28}
