@@ -1,9 +1,12 @@
 import { Tabs } from "expo-router"
 import Ionicons from "@expo/vector-icons/Ionicons"
+import {StatusBar} from "expo-status-bar/build/StatusBar";
 export default function HomeLayout() {
     return (
+        <>
+            <StatusBar style="light" />
         <Tabs screenOptions={{
-            tabBarActiveTintColor: "#ff5800",
+            tabBarActiveTintColor: "#E77D00",
             tabBarInactiveTintColor: "#808080",
             tabBarLabelStyle: {
                 fontSize: 12,
@@ -11,12 +14,16 @@ export default function HomeLayout() {
             },
             tabBarStyle: {
                 backgroundColor: "black"
-            }
+            },
+            headerStyle: {
+                backgroundColor: "black"
+            },
+            headerTintColor: "white",
+            headerShadowVisible: false
         }}>
             <Tabs.Screen
                 name="home/index"
                 options={{
-                    headerShown: false,
                     title: "Home",
                     tabBarIcon: ({ color }) => (
                         <Ionicons
@@ -31,7 +38,6 @@ export default function HomeLayout() {
             <Tabs.Screen
                 name="search"
                 options={{
-                    headerShown: false,
                     title: "Search",
                     tabBarIcon: ({ color }) => (
                         <Ionicons
@@ -47,7 +53,6 @@ export default function HomeLayout() {
                 name="account/index"
                 options={{
                     title: "Account",
-                    headerShown: false,
                     tabBarIcon: ({ color }) => (
                         <Ionicons
                             size={28}
@@ -59,5 +64,6 @@ export default function HomeLayout() {
                 }}
             />
         </Tabs>
+            </>
     )
 }
