@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import WatchListItem from "../../../components/WatchListItem";
 import SearchInput from "../../../components/SearchInput";
 
-export default function HomeScreen() {
+export default function SearchScreen() {
     let [movies, setMovies] = useState([])
     let [isLoading, setIsLoading] = useState(true)
     let [searchQuery, setSearchQuery] = useState('');
