@@ -14,9 +14,8 @@ export default function HomeLayout() {
             }
         }}>
             <Tabs.Screen
-                name="home/index"
+                name="home"
                 options={{
-                    headerShown: false,
                     title: "Home",
                     tabBarIcon: ({ color }) => (
                         <Ionicons
@@ -31,7 +30,6 @@ export default function HomeLayout() {
             <Tabs.Screen
                 name="search"
                 options={{
-                    headerShown: false,
                     title: "Search",
                     tabBarIcon: ({ color }) => (
                         <Ionicons
@@ -47,7 +45,6 @@ export default function HomeLayout() {
                 name="account/index"
                 options={{
                     title: "Account",
-                    headerShown: false,
                     tabBarIcon: ({ color }) => (
                         <Ionicons
                             size={28}
