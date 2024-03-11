@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router"
 import Ionicons from "@expo/vector-icons/Ionicons"
 import {StatusBar} from "expo-status-bar/build/StatusBar";
+import {Platform} from "react-native";
 export default function HomeLayout() {
     return (
         <>
@@ -11,9 +12,22 @@ export default function HomeLayout() {
             tabBarLabelStyle: {
                 fontSize: 12,
                 fontWeight: "bold",
+
             },
             tabBarStyle: {
-                backgroundColor: "black"
+                backgroundColor: "black",
+                ...Platform.select({
+                    ios: {
+                        shadowColor: "#E77D00",
+                        shadowOffset: { width: 0, height: -3 },
+                        shadowOpacity: 0.1,
+                        shadowRadius: 3,
+                    },
+                    android: {
+                        elevation: 20,
+                        shadowColor: "#000",
+                    },
+                }),
             },
             headerStyle: {
                 backgroundColor: "black"
