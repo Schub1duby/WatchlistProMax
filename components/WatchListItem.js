@@ -8,7 +8,7 @@ export default function WatchListItem({ item, path }) {
     >
       <TouchableOpacity>
         <View style={styles.container}>
-          <Text style={styles.paddingLR}>{item.Title}</Text>
+          <Text style={styles.text}>{item.Title}</Text>
         </View>
       </TouchableOpacity>
     </Link>
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     height: 56,
-    backgroundColor: "#f2f2f2",
+    backgroundColor: "black",
     alignItems: "center",
     justifyContent: "left",
     paddingLeft: 16,
@@ -28,8 +28,9 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     paddingBottom: 8,
   },
-  paddingLR: {
+  text: {
     paddingLeft: 16,
     paddingRight: 16,
+    color: "white"
   },
 });

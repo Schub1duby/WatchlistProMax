@@ -6,7 +6,7 @@ export default function Layout() {
       <Stack.Screen
         name="index"
         options={{
-          title: "Movies",
+          title: "Search",
             headerShown: false
         }}
       />

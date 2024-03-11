@@ -57,7 +57,8 @@ export default function HomeScreen() {
 
 const defaultStyle = StyleSheet.create({
     View: {
-        backgroundColor: "black"
+        backgroundColor: "black",
+        height: "100%"
     },
     Input: {
         height: 48,

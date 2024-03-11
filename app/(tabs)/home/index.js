@@ -17,7 +17,7 @@ export default function HomeScreen() {
     loadItems();
   }, []);
   return (
-      <SafeAreaView>
+      <SafeAreaView style={defaultStyle.View}>
         <FlatList
             data={movies}
             renderItem={({ item }) => <WatchListItem item={item} path="home/detailsHome" />}
@@ -33,5 +33,7 @@ const defaultStyle = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignContent: "center",
+      backgroundColor: "black",
+      height: "100%"
   },
 });
