@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import {SafeAreaView, Text, View} from "react-native";
 import React, { useEffect, useState } from "react";
 import { useLocalSearchParams } from "expo-router";
 export default function Details() {
@@ -30,9 +30,9 @@ export default function Details() {
   return isLoading ? (
     <Text>Loading</Text>
   ) : (
-    <View>
+    <SafeAreaView>
       <Text>{movies.Title}</Text>
       <Text>{movies.Plot}</Text>
-    </View>
+    </SafeAreaView>
   );
 }

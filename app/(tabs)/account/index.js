@@ -1,9 +1,9 @@
-import {View, Text, StyleSheet} from "react-native"
+import {View, Text, StyleSheet, SafeAreaView} from "react-native"
 export default function FavoritesScreen()  {
     return (
-        <View style={defaultStyle.View}>
+        <SafeAreaView style={defaultStyle.View}>
             <Text>Account</Text>
-        </View>
+        </SafeAreaView>
     )
 }
 

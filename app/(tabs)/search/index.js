@@ -1,5 +1,5 @@
-import {View, Text, StyleSheet, FlatList, Alert, TextInput} from "react-native"
-import React, {useEffect, useState} from "react";
+import {StyleSheet, FlatList, Alert, SafeAreaView} from "react-native"
+import React, {useState} from "react";
 import WatchListItem from "../../../components/WatchListItem";
 import SearchInput from "../../../components/SearchInput";
 
@@ -37,7 +37,7 @@ export default function HomeScreen() {
 
 
     return (
-        <View>
+        <SafeAreaView>
             <SearchInput placeholder={"Search for movies ..."} value={searchQuery}
                          onSearchPress={(query => {
                              setSearchQuery(query);
@@ -50,7 +50,7 @@ export default function HomeScreen() {
                       keyExtractor={item => item.imdbID}
 
             />
-        </View>
+        </SafeAreaView>
 
 
     )
