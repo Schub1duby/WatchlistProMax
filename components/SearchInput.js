@@ -1,5 +1,6 @@
 import {StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
 import {useState} from "react";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function SearchInput({placeholder, value, onSearchPress}) {
 
@@ -16,11 +17,15 @@ export default function SearchInput({placeholder, value, onSearchPress}) {
 
                 <TouchableOpacity onPress={() => onSearchPress(inputValue)}>
                     <View style={styles.searchButton}>
-                        <Text style={styles.paddingLR}>Search</Text>
+                        <Ionicons
+                            size={42}
+                            style={{marginBottom: -3}}
+                            name="search"
+                            color="#E77D00"
+                        />
                     </View>
                 </TouchableOpacity>
             </View>
-
 
 
         </View>
@@ -29,20 +34,26 @@ export default function SearchInput({placeholder, value, onSearchPress}) {
 
 const styles = StyleSheet.create({
     container: {
-        width: 242,
-        marginBottom: 15
+        display: "flex",
+        flexDirection: "row",
+        alignContent: "center",
+        width: "100%",
+        marginBottom: 15,
+        marginTop: 15
     },
     input: {
-        height: 48,
+        height: 42,
         marginTop: 5,
         marginBottom: 5,
         fontSize: 20,
-        color: "black",
+        backgroundColor: "white",
         borderWidth: 2,
         borderRadius: 10,
         padding: 10,
         paddingRight: 50,
-        marginLeft: 8
+        marginLeft: 8,
+        width: "75%"
+
     },
 
     paddingLR: {
@@ -53,12 +64,15 @@ const styles = StyleSheet.create({
 
     searchbar: {
         display: "flex",
-        flexDirection: "row"
+        flexDirection: "row",
+        alignContent: "center",
+        justifyContent: "space-between"
     },
     searchButton: {
         width: 60,
         marginTop: 5,
-        marginLeft: 20
+        marginLeft: 20,
+        backgroundColor: "black"
     }
 
 })

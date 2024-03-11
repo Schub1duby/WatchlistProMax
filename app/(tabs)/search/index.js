@@ -37,7 +37,7 @@ export default function HomeScreen() {
 
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={defaultStyle.View}>
             <SearchInput placeholder={"Search for movies ..."} value={searchQuery}
                          onSearchPress={(query => {
                              setSearchQuery(query);
@@ -57,9 +57,7 @@ export default function HomeScreen() {
 
 const defaultStyle = StyleSheet.create({
     View: {
-        display: "flex",
-        justifyContent: "center",
-        alignContent: "center"
+        backgroundColor: "black"
     },
     Input: {
         height: 48,
