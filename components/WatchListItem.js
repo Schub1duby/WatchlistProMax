@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
+import Ionicons from "@expo/vector-icons/Ionicons";
 export default function WatchListItem({ item, path }) {
   return (
     <Link
@@ -8,7 +9,17 @@ export default function WatchListItem({ item, path }) {
     >
       <TouchableOpacity>
         <View style={styles.container}>
-          <Text style={styles.text}>{item.Title}</Text>
+          <Ionicons
+              size={64}
+              style={{ marginBottom: -3}}
+              name="film-outline"
+              color="white"
+          />
+          <View>
+            <Text style={styles.text}>{item.Title}</Text>
+            <Text style={styles.text}>{item.Year}</Text>
+          </View>
+
         </View>
       </TouchableOpacity>
     </Link>
@@ -19,7 +30,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "row",
-    height: 56,
+    height: 72,
     backgroundColor: "black",
     alignItems: "center",
     justifyContent: "left",
