@@ -4,7 +4,7 @@ import { useLocalSearchParams } from "expo-router";
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 import WatchListButton from "../../../components/WatchListButton";
 
-export default function Details() {
+export default function DetailsHome() {
   let [movie, setMovie] = useState([]);
   const { getItem, setItem } = useAsyncStorage("Items");
   let [isLoading, setIsLoading] = useState(true);

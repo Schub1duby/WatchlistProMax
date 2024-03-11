@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
-export default function WatchListItem({ item }) {
+export default function WatchListItem({ item, path }) {
   return (
     <Link
-      href={{ pathname: "search/details", params: { imdbID: item.imdbID } }}
+      href={{ pathname: path, params: { imdbID: item.imdbID } }}
       asChild
     >
       <TouchableOpacity>

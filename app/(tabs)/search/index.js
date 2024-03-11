@@ -46,7 +46,7 @@ export default function HomeScreen() {
 
             </SearchInput>
             <FlatList data={movies}
-                      renderItem={({item}) => <WatchListItem item={item}/>}
+                      renderItem={({item}) => <WatchListItem item={item} path="search/detailsSearch"/>}
                       keyExtractor={item => item.imdbID}
             />
         </SafeAreaView>

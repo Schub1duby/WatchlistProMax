@@ -20,7 +20,7 @@ export default function HomeScreen() {
       <SafeAreaView>
         <FlatList
             data={movies}
-            renderItem={({ item }) => <WatchListItem item={item} />}
+            renderItem={({ item }) => <WatchListItem item={item} path="home/detailsHome" />}
             keyExtractor={(item) => item.imdbID}
         />
       </SafeAreaView>

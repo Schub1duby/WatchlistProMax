@@ -11,7 +11,7 @@ export default function Layout() {
         }}
       />
       <Stack.Screen
-        name="details"
+        name="detailsSearch"
         options={{
           headerTitle: () => <MovieHeader />,
         }}
