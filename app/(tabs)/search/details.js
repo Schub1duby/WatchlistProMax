@@ -57,7 +57,7 @@ export default function Details() {
       <Text>{movie.Title}</Text>
       <Text>{movie.Plot}</Text>
       <WatchListButton onPress={onAddToWatchList}>
-        <Text>--Add to Watchlist--</Text>
+        <Text>Add to Watchlist</Text>
       </WatchListButton>
     </SafeAreaView>
   );

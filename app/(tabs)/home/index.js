@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, FlatList } from "react-native";
 import WatchListItem from "../../../components/WatchListItem";
 import { useEffect, useState } from "react";
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
   const { getItem, setItem } = useAsyncStorage("Items");
@@ -17,11 +18,13 @@ export default function HomeScreen() {
     loadItems();
   }, []);
   return (
+    <SafeAreaView>
     <FlatList
       data={movies}
       renderItem={({ item }) => <WatchListItem item={item} />}
       keyExtractor={(item) => item.imdbID}
     />
+    </SafeAreaView>
   );
 }
 
