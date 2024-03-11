@@ -1,4 +1,10 @@
-import { Redirect } from "expo-router"
+import {Redirect} from "expo-router"
+import {View} from "react-native";
+
 export default function HomeScreen() {
-    return <Redirect href="/home" />
+    return (
+        <View style={{backgroundColor: "red"}}>
+            <Redirect href="/home"/>
+        </View>
+    )
 }

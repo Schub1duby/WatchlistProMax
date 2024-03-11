@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Text, SafeAreaView } from "react-native";
 import { useEffect, useState } from "react";
 import { useLocalSearchParams } from "expo-router";
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
@@ -53,12 +53,12 @@ export default function Details() {
   return isLoading ? (
     <Text>Loading</Text>
   ) : (
-    <View>
+    <SafeAreaView>
       <Text>{movie.Title}</Text>
       <Text>{movie.Plot}</Text>
       <WatchListButton onPress={onAddToWatchList}>
         <Text>--Add to Watchlist--</Text>
       </WatchListButton>
-    </View>
+    </SafeAreaView>
   );
 }
