@@ -32,6 +32,7 @@ export default function Details() {
   ) : (
     <View>
       <Text>{movies.Title}</Text>
+      <Text>{movies.Plot}</Text>
     </View>
   );
 }

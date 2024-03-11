@@ -9,7 +9,7 @@ export default function HomeScreen() {
     useEffect(() => {
         const loadMovies = async () => {
             try {
-                const response = await fetch("https://www.omdbapi.com/?s=bir&page=1&apikey=e69bd20e", {
+                const response = await fetch("https://www.omdbapi.com/?s=iron&page=1&apikey=e69bd20e", {
                     method: 'GET',
                     headers: {
                         contentType: "application/json"
