@@ -33,9 +33,6 @@ export default function HomeScreen() {
         loadMovies()
     }, [])
 
-    //console.log(movies)
-
-
     return (
         isLoading ?
             <Text>Loading</Text>
@@ -43,7 +40,6 @@ export default function HomeScreen() {
             <FlatList data={movies}
                       renderItem={({item}) => <WatchListItem item={item} />}
                       keyExtractor={item => item.imdbID}
-
             />
 
     )
