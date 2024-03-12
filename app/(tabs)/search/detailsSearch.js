@@ -15,10 +15,10 @@ export default function DetailsSearch() {
     const storedItems = await getItem();
     const parsedItems = storedItems ? JSON.parse(storedItems) : [];
     if (parsedItems.find((item) => item.imdbID === movie.imdbID)) {
-      console.log("Item already in list");
-      return;
+      parsedItems = parsedItems.filter((item) => item.imdbID !== movie.imdbID);
+    } else {
+      parsedItems.push(movie);
     }
-    parsedItems.push(movie);
     await setItem(JSON.stringify(parsedItems));
   };
 
@@ -54,6 +54,7 @@ export default function DetailsSearch() {
     <Spinner />
   ) : (
     <SafeAreaView style={defaultStyle.View}>
+      <Text style={defaultStyle.Title}>{movie.Title}</Text>
       <View style={defaultStyle.Row}>
         <View style={defaultStyle.Column}>
           <Text style={defaultStyle.Text}>{movie.Year}, directed by</Text>
@@ -63,21 +64,18 @@ export default function DetailsSearch() {
           <Image source={{ uri: movie.Poster }} style={defaultStyle.Poster} />
         </View>
       </View>
-
       <View style={defaultStyle.Row2}>
         <View style={defaultStyle.Column}>
           <Text style={defaultStyle.Subtitle}>Genre:</Text>
           <Text style={defaultStyle.Subtitle}>Runtime:</Text>
           <Text style={defaultStyle.Subtitle}>Age rating:</Text>
           <Text style={defaultStyle.Subtitle}>Rating:</Text>
-          <Text style={defaultStyle.Subtitle}>Actors:</Text>
         </View>
         <View style={defaultStyle.Column3}>
           <Text style={defaultStyle.Text}>{movie.Genre}</Text>
           <Text style={defaultStyle.Text}>{movie.Runtime}</Text>
           <Text style={defaultStyle.Text}>{movie.Rated}</Text>
           <Text style={defaultStyle.Text}>{movie.imdbRating}</Text>
-          <Text style={defaultStyle.Text}>{movie.Actors}</Text>
         </View>
       </View>
       <View style={defaultStyle.Row2}>
@@ -100,6 +98,12 @@ const defaultStyle = StyleSheet.create({
     height: "100%",
     paddingLeft: 16,
     paddingRight: 16,
+  },
+  Title: {
+    fontWeight: "bold",
+    alignSelf: "center",
+    fontSize: 24,
+    color: "white",
   },
   Subtitle: {
     color: "white",
@@ -128,15 +132,19 @@ const defaultStyle = StyleSheet.create({
     flexDirection: "row",
     borderRadius: 10,
     backgroundColor: "#2C2A2F",
-    padding: 16,
+    padding: 8,
+    marginTop: 8,
+    marginBottom: 8,
   },
   Row2: {
     flex: 1,
-    marginTop: 16,
     flexDirection: "row",
+    marginTop: 8,
+    marginBottom: 8,
+    alignItems: "center",
     borderRadius: 10,
     backgroundColor: "#2C2A2F",
-    padding: 16,
+    padding: 8,
   },
   Poster: {
     flex: 1,

@@ -13,7 +13,11 @@ export default function Layout() {
       <Stack.Screen
         name="detailsHome"
         options={{
-          headerTitle: () => <MovieHeader />,
+          headerTitle: "",
+          headerStyle: {
+            backgroundColor: "black",
+          },
+          headerTintColor: "white",
         }}
       />
     </Stack>

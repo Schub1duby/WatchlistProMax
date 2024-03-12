@@ -1,12 +1,11 @@
 import {View, Text, StyleSheet, TouchableOpacity, Image} from "react-native";
 import {Link} from "expo-router";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import React from "react";
 
 export default function WatchListItem({item, path}) {
     return (
         <Link
-            href={{pathname: path, params: {imdbID: item.imdbID}}}
+            href={{pathname: path, params: {imdbID: item.imdbID, movieName: item.Title}}}
             asChild
         >
             <TouchableOpacity>
@@ -15,8 +14,8 @@ export default function WatchListItem({item, path}) {
                         style={styles.image}
                         source={{uri: item.Poster}}
                     />
-                    <View>
-                        <Text style={styles.text}>{item.Title}</Text>
+                    <View style={styles.textContainer}>
+                        <Text style={styles.title}>{item.Title}</Text>
                         <Text style={styles.text}>{item.Year}</Text>
                     </View>
 
@@ -43,9 +42,19 @@ const styles = StyleSheet.create({
         marginTop: 4,
         marginBottom: 4
     },
-    text: {
+    textContainer: {
+        flex: 1,
         paddingLeft: 16,
         paddingRight: 16,
+        flexDirection: "column",
+        justifyContent: "center"
+    },
+    title: {
+        color: "white",
+        fontSize: 14,
+        fontWeight: "bold",
+    },
+    text: {
         color: "white"
     },
     image: {

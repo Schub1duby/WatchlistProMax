@@ -14,7 +14,7 @@ export default function Layout() {
       <Stack.Screen
         name="detailsSearch"
         options={{
-          headerTitle: () => <MovieHeader />,
+          headerTitle: "",
           headerStyle: {
             backgroundColor: "black",
           },
