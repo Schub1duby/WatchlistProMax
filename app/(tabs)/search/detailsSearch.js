@@ -13,13 +13,19 @@ export default function DetailsSearch() {
 
   const onAddToWatchList = async () => {
     const storedItems = await getItem();
-    const parsedItems = storedItems ? JSON.parse(storedItems) : [];
+    let parsedItems = storedItems ? JSON.parse(storedItems) : [];
     if (parsedItems.find((item) => item.imdbID === movie.imdbID)) {
       parsedItems = parsedItems.filter((item) => item.imdbID !== movie.imdbID);
     } else {
       parsedItems.push(movie);
     }
     await setItem(JSON.stringify(parsedItems));
+  };
+
+  isItemInWatchList = async () => {
+    const storedItems = await getItem();
+    let parsedItems = storedItems ? JSON.parse(storedItems) : [];
+    return parsedItems.find((item) => item.imdbID === movie.imdbID);
   };
 
   useEffect(() => {
@@ -51,9 +57,10 @@ export default function DetailsSearch() {
     loadMovieDetails();
   }, [imdbID]);
   return isLoading ? (
-    <SafeAreaView style={defaultStyle.spinnerView}>
-      <Spinner />
-    </SafeAreaView>
+      <SafeAreaView style={defaultStyle.spinnerView}>
+        <Spinner />
+      </SafeAreaView>
+
   ) : (
     <SafeAreaView style={defaultStyle.View}>
       <Text style={defaultStyle.Title}>{movie.Title}</Text>
@@ -82,14 +89,12 @@ export default function DetailsSearch() {
       </View>
       <View style={defaultStyle.Row2}>
         <View style={defaultStyle.Column}>
-        <Text style={defaultStyle.Subtitle}>Plot</Text>
-        <Text style={defaultStyle.Text}>{movie.Plot}</Text>
+          <Text style={defaultStyle.Subtitle}>Plot</Text>
+          <Text style={defaultStyle.Text}>{movie.Plot}</Text>
         </View>
       </View>
 
-      <WatchListButton onPress={onAddToWatchList}>
-        <Text>Add to Watchlist</Text>
-      </WatchListButton>
+      <WatchListButton onPress={onAddToWatchList} isInWatchList={isItemInWatchList}/>
     </SafeAreaView>
   );
 }
