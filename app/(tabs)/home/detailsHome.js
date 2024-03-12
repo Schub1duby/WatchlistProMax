@@ -22,12 +22,6 @@ export default function DetailsHome() {
     await setItem(JSON.stringify(parsedItems));
   };
 
-  isItemInWatchList = async () => {
-    const storedItems = await getItem();
-    let parsedItems = storedItems ? JSON.parse(storedItems) : [];
-    return parsedItems.find((item) => item.imdbID === movie.imdbID);
-  };
-
   useEffect(() => {
     const loadItems = async () => {
       const storedItems = await getItem();
@@ -39,7 +33,6 @@ export default function DetailsHome() {
     if (!imdbID) {
       return;
     }
-
     const loadMovieDetails = async () => {
       try {
         setIsLoading(true);
@@ -47,13 +40,11 @@ export default function DetailsHome() {
         const response = await fetch(url);
         const data = await response.json();
         setMovie(data);
-        console.log(data);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
       }
     };
-
     loadMovieDetails();
   }, [imdbID]);
   return isLoading ? (
@@ -94,7 +85,7 @@ export default function DetailsHome() {
         </View>
       </View>
 
-      <WatchListButton onPress={onAddToWatchList} isInWatchList={isItemInWatchList}/>
+      <WatchListButton onPress={onAddToWatchList} imdbId={movie.imdbID}/>
     </SafeAreaView>
   );
 }

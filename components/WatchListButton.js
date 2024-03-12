@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 
-function WatchListButton({ onPress, isInWatchList }, ref) {
-  const [isAdded, setIsAdded] = useState(isInWatchList);
+function WatchListButton({ onPress, imdbId }, ref) {
+  const { getItem, setItem } = useAsyncStorage("Items");
+  const [isAdded, setIsAdded] = useState(false);
 
   useEffect(() => {
-    setIsAdded(isInWatchList);
-  }, [isInWatchList]);
+    const loadItems = async () => {
+      const storedItems = await getItem();
+      let parsedItems = storedItems ? JSON.parse(storedItems) : [];
+      if (parsedItems.find((item) => item.imdbID === imdbId)) {
+        setIsAdded(true);
+      }
+    };
+    loadItems();
+  }, [imdbId]);
+
+  console.log("Button: "+ isAdded);
 
   const handlePress = () => {
     setIsAdded(!isAdded);

@@ -4,7 +4,6 @@ import React from "react";
 
 export default function MovieHeader() {
   const { movieName } = useLocalSearchParams();
-  console.log(movieName);
   return (
     <SafeAreaView style={styles.view}>
       <Text style={styles.title}>{movieName}</Text>
