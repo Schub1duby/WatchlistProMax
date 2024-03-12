@@ -5,7 +5,6 @@ import SearchInput from "../../../components/SearchInput";
 
 export default function HomeScreen() {
     let [movies, setMovies] = useState([])
-    let [isLoading, setIsLoading] = useState(true)
     let [searchQuery, setSearchQuery] = useState('');
 
     const loadMovies = async (query) => {
@@ -28,7 +27,6 @@ export default function HomeScreen() {
             } else {
                 Alert.alert("Error", "No Movies found")
             }
-            setIsLoading(false)
         } catch (error) {
             console.log(error)
             Alert.alert("An Error occurred", error.message)

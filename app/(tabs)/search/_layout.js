@@ -14,6 +14,10 @@ export default function Layout() {
         name="detailsSearch"
         options={{
           headerTitle: () => <MovieHeader />,
+          headerStyle: {
+            backgroundColor: "black",
+          },
+          headerTintColor: "white",
         }}
       />
     </Stack>

@@ -1,11 +1,10 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { Link } from "expo-router";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import React from "react";
 export default function WatchListItem({ item, path }) {
   return (
     <Link
-      href={{ pathname: path, params: { imdbID: item.imdbID } }}
+      href={{ pathname: path, params: { imdbID: item.imdbID, movieName: item.Title } }}
       asChild
     >
       <TouchableOpacity>

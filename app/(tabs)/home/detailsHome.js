@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useLocalSearchParams } from "expo-router";
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 import WatchListButton from "../../../components/WatchListButton";
+import Spinner from "../../../components/Spinner";
 
 export default function DetailsHome() {
   let [movie, setMovie] = useState([]);
@@ -51,8 +52,8 @@ export default function DetailsHome() {
     loadMovieDetails();
   }, [imdbID]);
   return isLoading ? (
-    <Text>Loading</Text>
-  ) : (
+    <Spinner />
+    ) : (
     <SafeAreaView>
       <Text>{movie.Title}</Text>
       <Text>{movie.Plot}</Text>
