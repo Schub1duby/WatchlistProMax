@@ -22,6 +22,12 @@ export default function DetailsHome() {
     await setItem(JSON.stringify(parsedItems));
   };
 
+  isItemInWatchList = async () => {
+    const storedItems = await getItem();
+    let parsedItems = storedItems ? JSON.parse(storedItems) : [];
+    return parsedItems.find((item) => item.imdbID === movie.imdbID);
+  };
+
   useEffect(() => {
     const loadItems = async () => {
       const storedItems = await getItem();
@@ -85,9 +91,7 @@ export default function DetailsHome() {
         </View>
       </View>
 
-      <WatchListButton onPress={onAddToWatchList}>
-        <Text>Add to Watchlist</Text>
-      </WatchListButton>
+      <WatchListButton onPress={onAddToWatchList} isInWatchList={isItemInWatchList}/>
     </SafeAreaView>
   );
 }
