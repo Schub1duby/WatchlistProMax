@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import MovieHeader from "../../../components/movie/MovieHeader";
+import MovieHeader from "../../../components/MovieHeader";
 export default function Layout() {
   return (
     <Stack>
