@@ -57,7 +57,10 @@ export default function DetailsHome() {
     loadMovieDetails();
   }, [imdbID]);
   return isLoading ? (
-    <Spinner />
+      <SafeAreaView style={defaultStyle.spinnerView}>
+        <Spinner />
+      </SafeAreaView>
+
   ) : (
     <SafeAreaView style={defaultStyle.View}>
       <Text style={defaultStyle.Title}>{movie.Title}</Text>
@@ -156,4 +159,11 @@ const defaultStyle = StyleSheet.create({
     aspectRatio: 0.6535947712418301, // 300 / 459
     borderRadius: 10,
   },
+  spinnerView: {
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black"
+  }
 });
