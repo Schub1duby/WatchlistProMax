@@ -48,10 +48,9 @@ export default function DetailsHome() {
     loadMovieDetails();
   }, [imdbID]);
   return isLoading ? (
-      <SafeAreaView style={defaultStyle.spinnerView}>
-        <Spinner />
-      </SafeAreaView>
-
+    <SafeAreaView style={defaultStyle.spinnerView}>
+      <Spinner />
+    </SafeAreaView>
   ) : (
     <SafeAreaView style={defaultStyle.View}>
       <Text style={defaultStyle.Title}>{movie.Title}</Text>
@@ -84,8 +83,7 @@ export default function DetailsHome() {
           <Text style={defaultStyle.Text}>{movie.Plot}</Text>
         </View>
       </View>
-
-      <WatchListButton onPress={onAddToWatchList} imdbId={movie.imdbID}/>
+      <WatchListButton onPress={onAddToWatchList} imdbId={movie.imdbID} />
     </SafeAreaView>
   );
 }
@@ -155,6 +153,6 @@ const defaultStyle = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "black"
-  }
+    backgroundColor: "black",
+  },
 });

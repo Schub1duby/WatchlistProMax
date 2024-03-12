@@ -1,5 +1,4 @@
 import { Stack } from "expo-router";
-import MovieHeader from "../../../components/MovieHeader";
 export default function Layout() {
   return (
     <Stack>
@@ -7,7 +6,7 @@ export default function Layout() {
         name="index"
         options={{
           title: "Home",
-            headerShown: false
+          headerShown: false,
         }}
       />
       <Stack.Screen

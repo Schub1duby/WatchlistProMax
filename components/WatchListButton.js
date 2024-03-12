@@ -17,8 +17,6 @@ function WatchListButton({ onPress, imdbId }, ref) {
     loadItems();
   }, [imdbId]);
 
-  console.log("Button: "+ isAdded);
-
   const handlePress = () => {
     setIsAdded(!isAdded);
     onPress();

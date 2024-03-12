@@ -1,8 +1,8 @@
-import { Stack } from "expo-router"
+import { Stack } from "expo-router";
 export default function Layout() {
-    return (
-        <Stack screenOptions={{contentType: {backgroundColor: "red"}}}>
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        </Stack>
-    )
+  return (
+    <Stack screenOptions={{ contentType: { backgroundColor: "red" } }}>
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    </Stack>
+  );
 }
